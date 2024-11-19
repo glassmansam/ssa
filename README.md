@@ -1,5 +1,3 @@
-Based on the provided PDF content, here is a draft of the README.md file:
-
 # SSA Individual Assignment 2024
 
 ## Introduction
