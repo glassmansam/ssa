@@ -15,6 +15,10 @@ function u = lEcuyer(z1, z2, z3, z4, n)
     s3 = 7;
     s4 = 13;
 
+    z1 = fi(uint32(z1))
+    z2 = fi(uint32(z2))
+    z3 = fi(uint32(z3))
+    z4 = fi(uint32(z4))
     % allocate space for the n generated variates
     u = zeros(n, 1); % n x 1 vector to contain the U(0,1) generated numbers
 
@@ -25,8 +29,10 @@ function u = lEcuyer(z1, z2, z3, z4, n)
         z3 = bitxor(bitsll(z3, s3), bitsrl(z3, L - s3));
         z4 = bitxor(bitsll(z4, s4), bitsrl(z4, L - s4));
         % TODO: Use vector/array to avoid duplicate code
-        
 
+        % combine
+        z = bitxor(bitxor(z1,z2),bitxor(z3,z4));
+        % put into range u~U(0,1)
+        u(i) = z / (2^L);
     end
-
 end

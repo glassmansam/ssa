@@ -3,7 +3,7 @@
 % Task 1
 % ---
 
-clearvars; clcl
+clearvars; clc
 
 % In (L'Ecuyer, 1999), several approaches for combined LFSRs are given. In this task we will 
 % restrict ourselves to the first example of ME-CF generators as indicated in Table 1 of this paper. 
@@ -16,17 +16,17 @@ clearvars; clcl
 % (1a) Implement this combined generator in MATLAB and generate 10,000 random numbers with this generator.  
 
 % initialize the seeds for the J generators with word length L
-z1 = uint32(2957)
-z2 = uint32(646)
-z3 = uint32(3847)
-z4 = uint32(947)
+z1 = 2957;
+z2 = 646;
+z3 = 3847;
+z4 = 947;
 % TODO: move to function body. Do the shift values need to be uint32?
-n = 10000;
-
+% n = 10000;
+n=10;
 u = lEcuyer(z1, z2, z3, z4, n);
-
+u
 % (1b) Run's Test
 
 % Perform the runs test
 alpha = 0.05;
-[reject, R] = runsTest(u, alpha);
+%[reject, R] = runsTest(u, alpha);
