@@ -1,5 +1,3 @@
-% Add your code for Task 1 in this file
-
 % Task 1
 % ---
 
@@ -27,14 +25,23 @@ alpha = 0.05; % signifiance level
 
 % Null Hypothesis
 % H0 = the numbers U are independent.
-% Runs test statistic R
-% Critical Value z
+% Runs test statistic R = 12.9232
+% Critical Value z = 1.9600
+% --> Reject H0 because R > z
+% --> u(i) are not statistically independent nor random enough.
+
 
 % CONCLUSION: We reject the null hypothesis since the test statistic R 
 % is much larger than the critical value z, indicating that u(i) are 
 % not statistically independent or randomly distributed.
 
-% ---
+% Probably I messed up with my implementation of lEcuyer unless the authors
+% of the paper were incorrect about the qualities of their combined LSFR 
+% with this choice of z and s.
 
-% Task 2
-% ---
+% Or I made a mistake when calcualting R, it is relatively quite large in comparison,
+% so at alpha = 0.05 the test is not even close.
+
+histogram(u)
+
+% Wow okay, yeah that is not uniform at all.

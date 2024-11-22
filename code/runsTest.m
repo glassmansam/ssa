@@ -1,11 +1,11 @@
-function [reject, R] = runsTest(u, alpha)
+function [reject, R] = runsTest(u, a)
     % Inputs:
     %   u - Sequence of random numbers
     %   a - Significance level (e.g., 0.05)
 
     n = length(u);             % Total number of observations
     b = sum(u < mean(u));      % Number of observations below the mean
-    a = n - b;                 % Number of observations above the mean
+    A = n - b;                 % Number of observations above the mean
     
     % Calculate the number of runs
     r = 1;                     % Initialize run counter
@@ -18,14 +18,15 @@ function [reject, R] = runsTest(u, alpha)
     % Null hypothesis: H0 - The sequence is independent and random
     
     % Expected value and standard deviation of runs
-    mu_r = (2 * a * b) / n + 1; 
-    sigma_r = sqrt((2 * a * b * (2 * a * b - n)) / (n^2 * (n - 1)));
+    mu_r = (2 * A * b) / n + 1; 
+    sigma_r = sqrt((2 * A * b * (2 * A * b - n)) / (n^2 * (n - 1)));
     
     % Compute test statistic R
-    %R = (r - mu_r) / sigma_r;
-    R = (r - (2*a*b/n + 1))/sqrt((2*a*b*(2*a*b - n))/(n^2*(n - 1)));
+    R = (r - mu_r) / sigma_r;
+    %R = (r - (2*A*b/n + 1))/sqrt((2*A*b*(2*A*b - n))/(n^2*(n - 1)));
+    
     % Critical value for two-tailed test
-    z = norminv(1 - alpha / 2);
+    z = norminv(1 - a / 2);
     
     % Determine rejection criterion
     reject = abs(R) > z;
