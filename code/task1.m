@@ -25,14 +25,14 @@ alpha = 0.05; % signifiance level
 
 [reject, R] = runsTest(u, alpha)
 
-% Null Hypothesizs
+% Null Hypothesis
 % H0 = the numbers U are independent.
 % Runs test statistic R
-% Critical Value
+% Critical Value z
 
-% CONCLUSION: We fail to reject the null hypothesis since our critical 
-% value is smaller than the test statistic R, and therefore u(i) are
-% statistically independent and randomly distributed enough for RNG.
+% CONCLUSION: We reject the null hypothesis since the test statistic R 
+% is much larger than the critical value z, indicating that u(i) are 
+% not statistically independent or randomly distributed.
 
 % ---
 
