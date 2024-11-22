@@ -45,3 +45,4 @@ alpha = 0.05; % signifiance level
 histogram(u)
 
 % Wow okay, yeah that is not uniform at all.
+save('clsfr.mat', 'u')
