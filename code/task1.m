@@ -30,6 +30,11 @@ alpha = 0.05; % signifiance level
 % Runs test statistic R
 % Critical Value
 
-% CONCLUSION: We fail to reject the null hypothesus since our critical 
-% value is greater than the test statistic R, and therefore u(i) are
-% independent and randomly distributed enough for statistical use.
+% CONCLUSION: We fail to reject the null hypothesis since our critical 
+% value is smaller than the test statistic R, and therefore u(i) are
+% statistically independent and randomly distributed enough for RNG.
+
+% ---
+
+% Task 2
+% ---
